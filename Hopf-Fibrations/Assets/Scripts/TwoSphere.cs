@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoSphere : MonoBehaviour
-{
-	[SerializeField] GameObject TwoSphereDot;
+public class TwoSphere : MonoBehaviour {
+	[SerializeField] GameObject TwoSphereDotTemplate;
 
 	// TODO: pooling
 	List<GameObject> TwoSphereDots = new List<GameObject>();
@@ -14,9 +13,8 @@ public class TwoSphere : MonoBehaviour
 		float SphereRadius = transform.localScale.x / 2f;
 		Vector3 SphereRadiusVector = new Vector3(SphereRadius, SphereRadius, SphereRadius);
 
-		// TODO: for each point, spawn a copy of TwoSphereDot at point
 		foreach (Vector3 point in PointsOnS2) {
-			GameObject go = Instantiate(TwoSphereDot, transform);
+			GameObject go = Instantiate(TwoSphereDotTemplate, transform);
 			go.transform.position += point * SphereRadius;
 			go.SetActive(true);
 
