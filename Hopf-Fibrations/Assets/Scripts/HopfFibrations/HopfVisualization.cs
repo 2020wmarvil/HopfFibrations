@@ -7,14 +7,25 @@ public class HopfVisualization : MonoBehaviour {
 	[SerializeField] float Thickness = 1f;
 	[SerializeField] int NumSamples = 5;
 	[SerializeField] int Resolution = 5;
+	[SerializeField] int NumPoints = 10;
 
 	[SerializeField] TwoSphere twoSphere;
 	[SerializeField] List<Vector3> PointsOnS2 = new List<Vector3>();
 
+	void Start() {
+		UpdateVisualization();
+	}
+
 	void Update() {
+		//if (Input.GetKeyDown(KeyCode.Space)) {
+			UpdateVisualization();
+		//}
+	}
+
+	void UpdateVisualization() { 
+		PointsOnS2 = PointGenerator.Circle(NumPoints);
 		twoSphere.SpawnDots(PointsOnS2);
 
-		// TODO: only re-generate when a point moves
 		AddFibers(PointsOnS2);
 	}
 
