@@ -572,6 +572,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 961212202}
+  distance: 1
+  speed: 0.2
+  elevation: 0.2
   boost: 2
   positionLerpTime: 0.2
   mouseSensitivityCurve:
